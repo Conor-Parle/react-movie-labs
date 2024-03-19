@@ -11,7 +11,7 @@ import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
-import img from '../../images/placeholder.png'
+import img from './place.png'
 
 export default function MovieCard(props) {
   const movie = props.movie;
