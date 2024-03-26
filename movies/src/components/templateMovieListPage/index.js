@@ -40,4 +40,4 @@ function MovieListPageTemplate({ movies, title, selectFavorite }) {
     </Grid>
   );
 }
-export default MovieListPageTemplate;
+export default MovieListPageTemplate;   
