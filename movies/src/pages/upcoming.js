@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PageTemplate from '../components/templateMovieListPage';
+import { useQuery } from 'react-query';
 import { getUpcomingMovies } from "../api/tmdb-api"; 
 
 const UpcomingMoviesPage = () => {
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const { data: upcomingMovies = [], isLoading, isError } = useQuery('upcomingMovies', getUpcomingMovies);
 
-  useEffect(() => {
-    getUpcomingMovies().then(upcomingMovies => {
-      const moviesWithFavorites = upcomingMovies.map(movie => ({
-        ...movie,
-        favorite: false
-      }));
-      setUpcomingMovies(moviesWithFavorites);
-    });
-  }, []);
-  
   const addToFavorites = (movieId) => {
-    const updatedMovies = upcomingMovies.map((movie) =>
-      movie.id === movieId ? { ...movie, favorite: true } : movie
-    );
-    setUpcomingMovies(updatedMovies);
   };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error fetching data</div>;
 
   return (
     <PageTemplate
@@ -32,3 +22,4 @@ const UpcomingMoviesPage = () => {
 };
 
 export default UpcomingMoviesPage;
+
