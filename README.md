@@ -6,3 +6,6 @@ I think what confused me the most was the api folder. Once i finally understood 
 
 The pages section was similar in a way. I had completed the upcoming.js page in the labs so I was able to use that as a template for the other pages which was extremely useful. 
 
+Every time I would create a new file I would have to go into src/index.js and make sure to add a new route so that the page was able to be found. 
+
+I would also go into siteHeader every time I would create a new page and I would make sure to add and rename a new label. I also made sure the path matched. I thought this was my issue with the now playing page but I've checked everything and can't find why it doesn't seem to be loading. It is probably just a misspelling or something that i cant seem to find and that's why i've left the code for it in place. 
