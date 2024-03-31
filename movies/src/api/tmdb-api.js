@@ -97,3 +97,5 @@ export const getMovie = (args) => {
         throw error;
       });
   };
+  
+  
