@@ -19,12 +19,16 @@ const MoviePage = (props) => {
     getMovieRecommendations
   );
 
-  if (isLoading) {
+  if (isLoading || recommendationsLoading) {
     return <Spinner />;
   }
 
   if (isError) {
     return <h1>{error.message}</h1>;
+  }
+
+  if (recommendationsError) {
+    return <h1>Error fetching recommendations</h1>;
   }
 
   return (
