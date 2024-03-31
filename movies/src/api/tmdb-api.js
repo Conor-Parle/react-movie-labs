@@ -129,4 +129,22 @@ export const getMovie = (args) => {
         throw error;
       });
   };
+
+  export const getMovieRecommendations = ({ queryKey }) => {
+    const [, { id }] = queryKey;
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => data.results)
+      .catch((error) => {
+        throw new Error(error.message);
+      });
+  };
+  
   
