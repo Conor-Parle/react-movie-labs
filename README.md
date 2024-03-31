@@ -4,3 +4,5 @@ I have created a movie app. In this app I have included multiple pages including
 
 I think what confused me the most was the api folder. Once i finally understood it after getting it wrong multipe times I was able to repeat a very similar process for the other pages. Depending on the page sometimes the api code would change a little bit but overall it would remain fairly similar and I would then just have to rename the neccessary parts of the code to the new page name. 
 
+The pages section was similar in a way. I had completed the upcoming.js page in the labs so I was able to use that as a template for the other pages which was extremely useful. 
+
