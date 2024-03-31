@@ -37,6 +37,14 @@ const MoviePage = (props) => {
         <>
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
+            <div>
+              <h2>Recommended Movies</h2>
+              <ul>
+                {recommendations.map(recommendation => (
+                  <li key={recommendation.id}>{recommendation.title}</li>
+                ))}
+              </ul>
+            </div>
           </PageTemplate>
         </>
       ) : (
