@@ -147,4 +147,19 @@ export const getMovie = (args) => {
       });
   };
   
-  
+  export const getMovieCredits = ({ queryKey }) => {
+    const [, { id }] = queryKey;
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => data)
+      .catch((error) => {
+        throw new Error(error.message);
+      });
+  };
