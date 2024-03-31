@@ -50,6 +50,20 @@ const MoviePage = (props) => {
                 ))}
               </ul>
             </div>
+            <div>
+              <h2>Cast</h2>
+              <ul>
+                {credits.cast.map(member => (
+                  <li key={member.id}>{member.name} as {member.character}</li>
+                ))}
+              </ul>
+              <h2>Crew</h2>
+              <ul>
+                {credits.crew.map(member => (
+                  <li key={member.id}>{member.name} ({member.job})</li>
+                ))}
+              </ul>
+            </div>
           </PageTemplate>
         </>
       ) : (
