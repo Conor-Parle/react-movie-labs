@@ -14,6 +14,11 @@ const MoviePage = (props) => {
     getMovie
   );
 
+  const { data: recommendations, isLoading: recommendationsLoading, isError: recommendationsError } = useQuery(
+    ["recommendations", { id: id }],
+    getMovieRecommendations
+  );
+
   if (isLoading) {
     return <Spinner />;
   }
